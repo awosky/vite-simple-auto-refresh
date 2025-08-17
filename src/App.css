@@ -1,0 +1,68 @@
+/* Center the root app */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* App logos */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Auto-refresh card container */
+.auto-refresh-card {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* Countdown text */
+.countdown {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #007acc;
+  margin-top: 0.5rem;
+}
+
+/* Input */
+.auto-refresh-input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-right: 0.5rem;
+  width: 150px;
+  text-align: center;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn-save {
+  background: #1890ff;
+  color: #fff;
+}
+.btn-clear {
+  background: #ff4d4f;
+  color: #fff;
+  margin-top: 1rem;
+}
