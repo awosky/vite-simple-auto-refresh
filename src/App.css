@@ -49,20 +49,46 @@
   text-align: center;
 }
 
-/* Buttons */
+/* Button group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+/* Base button */
 .btn {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
-.btn-save {
-  background: #1890ff;
+
+/* Wake Lock toggle button */
+/* Wake Lock toggle button */
+.btn-toggle {
+  background: linear-gradient(135deg, #ff4d4f, #d9363e);
   color: #fff;
 }
+.btn-toggle:hover {
+  transform: translateY(-2px);
+}
+.btn-toggle.nonactive {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* Clear button */
 .btn-clear {
-  background: #ff4d4f;
+  background: linear-gradient(135deg, #ff4d4f, #d9363e);
   color: #fff;
-  margin-top: 1rem;
 }
+.btn-clear:hover {
+  transform: translateY(-2px);
+}
+
+
