@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Analytics } from "@vercel/analytics/next";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { Analytics } from "@vercel/analytics/react";
 
 const REFRESH_KEY = "auto-refresh-interval";
 const WAKELOCK_KEY = "wake-lock-enabled";
