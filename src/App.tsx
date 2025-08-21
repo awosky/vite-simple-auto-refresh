@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -125,54 +126,57 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+      <>
+        <div>
+          <a href="https://vite.dev" target="_blank">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
 
-      <div className="auto-refresh-card">
-        {intervalSec ? (
-          <div>
-            <h3>🔄 Auto Refresh Active</h3>
-            <p>
-              Refreshing every <b>{intervalSec}</b> seconds
-            </p>
-            <p className="countdown">Next refresh in: {countdown}s</p>
-            <p>📺 Keep Screen Awake: {wakeLockActive ? "✅ Enabled" : "❌ Disabled"}</p>
+        <div className="auto-refresh-card">
+          {intervalSec ? (
+            <div>
+              <h3>🔄 Auto Refresh Active</h3>
+              <p>
+                Refreshing every <b>{intervalSec}</b> seconds
+              </p>
+              <p className="countdown">Next refresh in: {countdown}s</p>
+              <p>📺 Keep Screen Awake: {wakeLockActive ? "✅ Enabled" : "❌ Disabled"}</p>
 
-            <div className="button-group">
-              <button
-                onClick={wakeLockActive ? disableWakeLock : requestWakeLock}
-                className={`btn btn-toggle ${wakeLockActive ? "" : "nonactive"}`}
-              >
-                {wakeLockActive ? "🔕 Disable Wake Lock" : "🔔 Enable Wake Lock"}
-              </button>
+              <div className="button-group">
+                <button
+                  onClick={wakeLockActive ? disableWakeLock : requestWakeLock}
+                  className={`btn btn-toggle ${wakeLockActive ? "" : "nonactive"}`}
+                >
+                  {wakeLockActive ? "🔕 Disable Wake Lock" : "🔔 Enable Wake Lock"}
+                </button>
 
-              <button onClick={handleClear} className="btn btn-clear">
-                ❌ Clear Timer
+                <button onClick={handleClear} className="btn btn-clear">
+                  ❌ Clear Timer
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <h3>Set Auto Refresh</h3>
+              <input
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                placeholder="Enter seconds"
+                className="auto-refresh-input"
+              />
+              <button onClick={handleSave} className="btn btn-save">
+                ✅ Save
               </button>
             </div>
-          </div>
-        ) : (
-          <div>
-            <h3>Set Auto Refresh</h3>
-            <input
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              placeholder="Enter seconds"
-              className="auto-refresh-input"
-            />
-            <button onClick={handleSave} className="btn btn-save">
-              ✅ Save
-            </button>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      </>
+      <Analytics />
     </>
   );
 };
